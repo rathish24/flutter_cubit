@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cubit/logic/cubit/counter_cubit.dart';
 import 'package:flutter_cubit/logic/cubit/counter_state.dart';
-import 'package:flutter_cubit/presentation/screens/second_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key, this.title, this.color}) : super(key: key);
+
+
+class ThirdScreen extends StatefulWidget {
+  ThirdScreen({Key key, this.title,this.color}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -21,10 +22,11 @@ class HomeScreen extends StatefulWidget {
   final Color color;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ThirdScreenState createState() => _ThirdScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ThirdScreenState extends State<ThirdScreen> {
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -37,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
+        backgroundColor: widget.color,
         title: Text(widget.title),
       ),
       body: Center(
@@ -95,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 FloatingActionButton(
                   heroTag: Text('${widget.title}'),
+                  backgroundColor: widget.color,
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decrement();
                   },
@@ -103,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 FloatingActionButton(
                   heroTag: Text('${widget.title} 2nd'),
+                  backgroundColor: widget.color,
                   onPressed: () {
                     //context.bloc<CounterCubit>().increment();
                     BlocProvider.of<CounterCubit>(context).increment();
@@ -112,26 +117,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 24,
-            ),
-            MaterialButton(
-              color: Colors.redAccent,
-              onPressed: () {
-                Navigator.of(context).pushNamed('/second');
-              },
-              child: Text('Go to second screen'),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            MaterialButton(
-              color: Colors.greenAccent,
-              onPressed: () {
-                Navigator.of(context).pushNamed('/third');
-              },
-              child: Text('Go to second screen'),
-            )
           ],
         ),
       ),
