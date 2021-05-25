@@ -1,7 +1,7 @@
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_cubit/cubit/counter_cubit.dart';
-import 'package:flutter_cubit/cubit/counter_state.dart';
+import 'file:///D:/flutter_tuts/flutter_cubit/flutter_cubit/lib/logic/cubit/counter_cubit.dart';
+import 'file:///D:/flutter_tuts/flutter_cubit/flutter_cubit/lib/logic/cubit/counter_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main(){
